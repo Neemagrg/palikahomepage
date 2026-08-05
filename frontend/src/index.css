@@ -1,0 +1,50 @@
+@import "tailwindcss";
+
+
+/* Global Reset */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* Smooth scrolling */
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+/* Body */
+
+body {
+  font-family: "Noto Sans Devanagari", "Segoe UI", Arial, sans-serif;
+  background: white;
+  color: #333;
+}
+
+
+/* Remove default link style */
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+/* Buttons */
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+
+/* Images */
+
+img {
+  display: block;
+  max-width: 100%;
+}
