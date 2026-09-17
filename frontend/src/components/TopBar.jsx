@@ -17,7 +17,7 @@ function TopBar() {
         </div>
 
         <div className="facebook-icon">
-          f
+          
         </div>
 
       </div>
