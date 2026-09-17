@@ -58,7 +58,7 @@ function Hero() {
 
               <input
                 type="text"
-                placeholder="स्थल खोज्नुहोस्.."
+                placeholder="स्थल खोज्नुहोस्..."
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
               />
