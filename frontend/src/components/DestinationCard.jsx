@@ -27,7 +27,7 @@ function DestinationCard({
         <p>{description}</p>
 
         <button className="read-more">
-          थप हेर्नुहोस् 
+          थप हेर्नुहोस् →
         </button>
 
       </div>
