@@ -20,7 +20,7 @@ function Navbar() {
 
           <div className="brand-text">
 
-            <h1>बेलबारी नगरपालिका</h1>
+            <h1>बेलबारी नगरपालिक</h1>
 
             <p>पर्यटकीय क्षेत्र</p>
 
