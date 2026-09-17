@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 function Navbar() {
 
-  const [active, setActive] = useState("गृहपृष्ठ");
+  const location = useLocation();
 
   return (
     <nav className="navbar">
@@ -10,7 +10,8 @@ function Navbar() {
       <div className="nav-container">
 
         {/* Logo */}
-        <div className="brand">
+
+        <Link to="/" className="brand">
 
           <img
             src="/images/logo.png"
@@ -20,36 +21,63 @@ function Navbar() {
 
           <div className="brand-text">
 
-            <h1>बेलबारी नगरपालिका</h1>
+            <h1>
+              बेलबारी नगरपालिका
+            </h1>
 
-            <p>पर्यटकीय क्षेत्र</p>
+            <p>
+              पर्यटकीय क्षेत्र
+            </p>
 
           </div>
 
-        </div>
+        </Link>
 
 
         {/* Navigation */}
+
         <div className="navigation">
 
-          <button
-            className={active === "गृहपृष्ठ" ? "nav-link active" : "nav-link"}
-            onClick={() => setActive("गृहपृष्ठ")}
+          <Link
+            to="/"
+            className={
+              location.pathname === "/"
+                ? "nav-link active"
+                : "nav-link"
+            }
           >
             गृहपृष्ठ
-          </button>
+          </Link>
 
-          <button
-            className={active === "पर्यटकीय क्षेत्र" ? "nav-link active" : "nav-link"}
-            onClick={() => setActive("पर्यटकीय क्षेत्र")}
+
+          <Link
+            to="/tourism"
+            className={
+              location.pathname === "/tourism"
+                ? "nav-link active"
+                : "nav-link"
+            }
           >
             पर्यटकीय क्षेत्र
-          </button>
+          </Link>
+
+
+          <Link
+            to="/historical"
+            className={
+              location.pathname === "/historical"
+                ? "nav-link active"
+                : "nav-link"
+            }
+          >
+            ऐतिहासिक
+          </Link>
 
         </div>
 
 
         {/* Login */}
+
         <button className="login-btn">
           लग इन
         </button>
