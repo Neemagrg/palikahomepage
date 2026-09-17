@@ -77,36 +77,69 @@ input {
 }
 
 
-/* ==============================
+/* ========================================
    NAVBAR
-================================= */
+======================================== */
 
 .navbar {
+  width: 100%;
   height: 69px;
+
   background: white;
 
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e7eb;
+
+  position: relative;
+  z-index: 10;
 }
 
+
 .nav-container {
-  max-width: 1170px;
+  width: 1170px;
+  max-width: calc(100% - 40px);
+
   height: 100%;
 
-  margin: auto;
+  margin: 0 auto;
 
   display: flex;
   align-items: center;
 }
 
 
-/* Logo */
+/* ========================================
+   BRAND
+======================================== */
 
 .brand {
   display: flex;
   align-items: center;
 
-  min-width: 260px;
+  text-decoration: none;
+
+  width: 260px;
+
+  flex-shrink: 0;
 }
+
+
+/* Logo wrapper */
+
+.logo-container {
+  width: 58px;
+  height: 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  margin-right: 10px;
+}
+
+
+/* Actual logo */
 
 .logo {
   width: 58px;
@@ -114,61 +147,100 @@ input {
 
   object-fit: contain;
 
-  margin-right: 10px;
+  display: block;
 }
+
+
+/* Website name */
+
+.brand-text {
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+}
+
 
 .brand-text h1 {
-  font-size: 21px;
-  line-height: 1.2;
+  margin: 0;
 
-  color: #19396d;
+  color: #193b70;
+
+  font-size: 21px;
+
+  line-height: 1.25;
 
   font-weight: 700;
+
+  white-space: nowrap;
 }
 
+
 .brand-text p {
-  margin-top: 2px;
+  margin: 2px 0 0;
 
   color: #777;
 
-  font-size: 13px;
+  font-size: 12px;
+
+  line-height: 1.2;
 }
 
 
-/* Navigation */
+/* ========================================
+   NAVIGATION
+======================================== */
 
 .navigation {
   height: 100%;
 
   display: flex;
+
   align-items: stretch;
 
-  margin-left: 15px;
+  margin-left: 0;
 }
+
 
 .nav-link {
-  border: none;
-  background: transparent;
+  height: 100%;
 
-  padding: 0 18px;
+  display: flex;
 
-  color: #555;
+  align-items: center;
 
-  font-size: 15px;
+  justify-content: center;
 
-  cursor: pointer;
+  padding: 0 17px;
 
   position: relative;
+
+  text-decoration: none;
+
+  color: #444;
+
+  font-size: 14px;
+
+  white-space: nowrap;
+
+  transition: color 0.2s ease;
 }
+
 
 .nav-link:hover {
-  color: #19396d;
+  color: #193b70;
 }
 
+
 .nav-link.active {
-  color: #19396d;
+  color: #193b70;
+
   font-weight: 600;
 }
+
+
+/* Active underline */
 
 .nav-link.active::after {
   content: "";
@@ -177,36 +249,44 @@ input {
 
   left: 0;
   right: 0;
+
   bottom: 0;
 
   height: 3px;
 
-  background: #19396d;
+  background: #193b70;
 }
 
 
-/* Login */
+/* ========================================
+   LOGIN BUTTON
+======================================== */
 
 .login-btn {
   margin-left: auto;
 
   width: 80px;
+
   height: 36px;
 
   border: none;
+
   border-radius: 5px;
 
-  background: #1b3970;
+  background: #1b3c73;
 
   color: white;
 
-  font-size: 14px;
+  font-size: 13px;
 
   cursor: pointer;
+
+  transition: background 0.2s ease;
 }
 
+
 .login-btn:hover {
-  background: #142e5c;
+  background: #142f5d;
 }
 
 
@@ -1273,11 +1353,501 @@ input {
 }
 
 
-/* ==============================
-   TOURISM CARD
-================================= */
+/* ========================================
+   TOURISM PAGE
+======================================== */
+
+.tourism-page {
+  width: 100%;
+  min-height: 100vh;
+  background: #f5f6f8;
+}
+
+
+/* ========================================
+   HERO
+======================================== */
+
+.tourism-hero {
+  min-height: 385px;
+
+  position: relative;
+  overflow: hidden;
+
+  color: white;
+
+  background:
+    linear-gradient(
+      135deg,
+      #244e89 0%,
+      #1e4785 50%,
+      #20517d 100%
+    );
+}
+
+
+/* Pattern */
+
+.tourism-hero::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background-image:
+    linear-gradient(
+      90deg,
+      rgba(255,255,255,0.07) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      rgba(255,255,255,0.07) 1px,
+      transparent 1px
+    );
+
+  background-size: 40px 40px;
+}
+
+
+/* Plus pattern */
+
+.tourism-hero::after {
+  content:
+    "+    +    +    +    +    +    +    +    +";
+
+  position: absolute;
+
+  top: 30px;
+  left: 30px;
+
+  width: 100%;
+
+  color: rgba(255,255,255,0.08);
+
+  font-size: 20px;
+
+  letter-spacing: 14px;
+
+  pointer-events: none;
+}
+
+
+.tourism-hero-inner {
+  position: relative;
+
+  z-index: 2;
+
+  width: calc(100% - 140px);
+
+  max-width: 1200px;
+
+  margin: auto;
+
+  padding-top: 53px;
+}
+
+
+/* ========================================
+   BREADCRUMB
+======================================== */
+
+.tourism-breadcrumb {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  margin-bottom: 17px;
+
+  color: rgba(255,255,255,0.85);
+
+  font-size: 12px;
+}
+
+
+.tourism-breadcrumb span:first-child {
+  font-weight: 600;
+}
+
+
+/* ========================================
+   TITLE
+======================================== */
+
+.tourism-hero h1 {
+  margin: 0 0 9px;
+
+  color: white;
+
+  font-size: 40px;
+
+  line-height: 1.2;
+
+  font-weight: 700;
+}
+
+
+.tourism-description {
+  margin: 0 0 27px;
+
+  color: rgba(255,255,255,0.88);
+
+  font-size: 14px;
+}
+
+
+/* ========================================
+   STATISTICS
+======================================== */
+
+.tourism-stats {
+  display: flex;
+
+  gap: 12px;
+
+  margin-bottom: 27px;
+}
+
+
+.stat-box {
+  width: 100px;
+
+  height: 69px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  padding-left: 17px;
+
+  border: 1px solid rgba(255,255,255,0.22);
+
+  border-radius: 8px;
+
+  background: rgba(255,255,255,0.10);
+}
+
+
+.stat-box strong {
+  color: white;
+
+  font-size: 24px;
+
+  line-height: 1;
+
+  margin-bottom: 5px;
+}
+
+
+.stat-box span {
+  color: rgba(255,255,255,0.78);
+
+  font-size: 11px;
+}
+
+
+/* ========================================
+   SEARCH
+======================================== */
+
+.tourism-search {
+  width: 540px;
+
+  max-width: 100%;
+
+  height: 47px;
+
+  display: flex;
+
+  align-items: center;
+
+  background: white;
+
+  border-radius: 7px;
+
+  overflow: hidden;
+}
+
+
+.tourism-search-icon {
+  margin-left: 15px;
+
+  margin-right: 8px;
+
+  color: #9aa0a7;
+
+  font-size: 23px;
+}
+
+
+.tourism-search input {
+  flex: 1;
+
+  width: 100%;
+  height: 100%;
+
+  padding: 0 8px;
+
+  border: none;
+
+  outline: none;
+
+  background: transparent;
+
+  color: #333;
+
+  font-size: 13px;
+}
+
+
+.tourism-search input::placeholder {
+  color: #a0a5ac;
+}
+
+
+.clear-search {
+  width: 35px;
+  height: 35px;
+
+  margin-right: 6px;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background: #edf0f4;
+
+  color: #777;
+
+  font-size: 20px;
+
+  cursor: pointer;
+}
+
+
+/* ========================================
+   CATEGORY TABS
+======================================== */
+
+.tourism-tabs-wrapper {
+  height: 51px;
+
+  background: white;
+
+  border-bottom: 1px solid #e5e7ea;
+
+  box-shadow:
+    0 2px 5px rgba(0,0,0,0.03);
+}
+
+
+.tourism-tabs {
+  width: calc(100% - 140px);
+
+  max-width: 1200px;
+
+  height: 100%;
+
+  margin: auto;
+
+  display: flex;
+
+  align-items: stretch;
+
+  gap: 5px;
+}
+
+
+.tourism-tab {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 4px;
+
+  padding: 0 17px;
+
+  border: none;
+
+  background: transparent;
+
+  color: #555;
+
+  font-family: inherit;
+
+  font-size: 13px;
+
+  cursor: pointer;
+}
+
+
+.tourism-tab span {
+  min-width: 22px;
+
+  height: 22px;
+
+  padding: 0 6px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 20px;
+
+  background: #edf0f4;
+
+  color: #244675;
+
+  font-size: 11px;
+}
+
+
+.tourism-tab.active {
+  color: #173d77;
+
+  font-weight: 600;
+}
+
+
+.tourism-tab.active::after {
+  content: "";
+
+  position: absolute;
+
+  bottom: 0;
+
+  left: 0;
+  right: 0;
+
+  height: 3px;
+
+  background: #173d77;
+}
+
+
+.tourism-tab.active span {
+  background: #173d77;
+
+  color: white;
+}
+
+
+/* ========================================
+   CONTENT
+======================================== */
+
+.tourism-content {
+  width: calc(100% - 140px);
+
+  max-width: 1200px;
+
+  margin: auto;
+
+  padding-top: 36px;
+
+  padding-bottom: 80px;
+}
+
+
+/* ========================================
+   SECTION HEADING
+======================================== */
+
+.tourism-section-heading {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 25px;
+}
+
+
+.tourism-section-heading h2 {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  margin: 0;
+
+  color: #173d77;
+
+  font-size: 22px;
+
+  font-weight: 700;
+}
+
+
+.tourism-section-heading h2 span {
+  width: 5px;
+
+  height: 23px;
+
+  display: block;
+
+  border-radius: 3px;
+
+  background: #244b83;
+}
+
+
+.place-count {
+  min-width: 55px;
+
+  height: 28px;
+
+  padding: 0 12px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 18px;
+
+  background: #e9edf3;
+
+  color: #78808c;
+
+  font-size: 11px;
+}
+
+
+/* ========================================
+   THREE CARD GRID
+======================================== */
+
+.tourism-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 25px;
+
+  align-items: start;
+}
+
+
+/* ========================================
+   CARD
+======================================== */
 
 .tourism-card {
+  min-width: 0;
+
   background: white;
 
   border-radius: 10px;
@@ -1294,18 +1864,20 @@ input {
 
 
 .tourism-card:hover {
-  transform: translateY(-3px);
+  transform: translateY(-4px);
 
   box-shadow:
     0 8px 22px rgba(25,55,95,0.13);
 }
 
 
-/* ==============================
+/* ========================================
    CARD IMAGE
-================================= */
+======================================== */
 
 .tourism-card-image {
+  width: 100%;
+
   height: 228px;
 
   position: relative;
@@ -1319,28 +1891,32 @@ input {
 
   height: 100%;
 
+  display: block;
+
   object-fit: cover;
 
-  display: block;
+  transition: transform 0.3s ease;
 }
 
 
-/* Category label */
+.tourism-card:hover .tourism-card-image img {
+  transform: scale(1.03);
+}
+
 
 .tourism-category {
   position: absolute;
 
   top: 10px;
-
   left: 11px;
-
-  background: #173d77;
-
-  color: white;
 
   padding: 4px 9px;
 
   border-radius: 4px;
+
+  background: #173d77;
+
+  color: white;
 
   font-size: 10px;
 
@@ -1348,9 +1924,9 @@ input {
 }
 
 
-/* ==============================
+/* ========================================
    CARD BODY
-================================= */
+======================================== */
 
 .tourism-card-body {
   padding: 17px 18px 16px;
@@ -1358,39 +1934,39 @@ input {
 
 
 .tourism-card-body h3 {
+  margin: 0 0 4px;
+
   color: #14386f;
 
   font-size: 16px;
-
-  margin-bottom: 4px;
 
   font-weight: 700;
 }
 
 
 .english-title {
+  margin: 0 0 9px;
+
   color: #9a9da2;
 
   font-size: 11px;
 
   font-style: italic;
-
-  margin-bottom: 9px;
 }
 
 
 .tourism-location {
-  color: #777;
-
-  font-size: 11px;
-
-  margin-bottom: 10px;
-
   display: flex;
 
   align-items: center;
 
   gap: 6px;
+
+  margin: 0 0 10px;
+
+  color: #777;
+
+  font-size: 11px;
 }
 
 
@@ -1402,21 +1978,21 @@ input {
 
 
 .tourism-card-description {
+  height: 39px;
+
+  margin: 0 0 8px;
+
+  overflow: hidden;
+
   color: #666;
 
   font-size: 11px;
 
   line-height: 1.7;
-
-  height: 39px;
-
-  overflow: hidden;
-
-  margin-bottom: 8px;
 }
 
 
-/* Coordinates */
+/* Coordinate */
 
 .coordinate {
   display: inline-flex;
@@ -1427,15 +2003,15 @@ input {
 
   padding: 0 9px;
 
-  background: #eef2f6;
+  margin-bottom: 7px;
 
   border-radius: 15px;
+
+  background: #eef2f6;
 
   color: #687789;
 
   font-size: 10px;
-
-  margin-bottom: 7px;
 }
 
 
@@ -1444,25 +2020,15 @@ input {
 .card-divider {
   height: 1px;
 
-  background: #e7e9ec;
+  margin-bottom: 9px;
 
-  margin: 0 0 9px;
+  background: #e7e9ec;
 }
 
 
 /* Details */
 
 .details-button {
-  border: none;
-
-  background: transparent;
-
-  color: #173d77;
-
-  font-size: 12px;
-
-  cursor: pointer;
-
   display: flex;
 
   align-items: center;
@@ -1470,6 +2036,18 @@ input {
   gap: 8px;
 
   padding: 0;
+
+  border: none;
+
+  background: transparent;
+
+  color: #173d77;
+
+  font-family: inherit;
+
+  font-size: 12px;
+
+  cursor: pointer;
 }
 
 
@@ -1491,83 +2069,88 @@ input {
   color: white;
 
   font-size: 17px;
-
-  line-height: 1;
 }
 
 
-/* ==============================
+/* ========================================
    NO RESULTS
-================================= */
+======================================== */
 
 .no-results {
-  grid-column: 1 / -1;
+  padding: 70px 20px;
 
   text-align: center;
 
-  padding: 60px 20px;
-
   color: #777;
-
-  font-size: 14px;
 }
 
 
-/* ==============================
-   RESPONSIVE
-================================= */
+.no-results-icon {
+  font-size: 30px;
 
-@media (max-width: 1250px) {
+  margin-bottom: 10px;
+}
+
+
+.no-results h3 {
+  margin-bottom: 5px;
+
+  color: #173d77;
+}
+
+
+.no-results p {
+  margin-bottom: 15px;
+
+  font-size: 13px;
+}
+
+
+.no-results button {
+  padding: 9px 15px;
+
+  border: none;
+
+  border-radius: 5px;
+
+  background: #173d77;
+
+  color: white;
+
+  cursor: pointer;
+}
+
+
+/* ========================================
+   RESPONSIVE
+======================================== */
+
+@media (max-width: 1100px) {
 
   .tourism-hero-inner,
   .tourism-tabs,
   .tourism-content {
-    margin-left: 70px;
-
-    margin-right: 70px;
+    width: calc(100% - 60px);
   }
 
   .tourism-grid {
     grid-template-columns:
-      repeat(2, 367px);
+      repeat(2, minmax(0, 1fr));
   }
 
 }
 
 
-@media (max-width: 850px) {
-
-  .tourism-hero-inner,
-  .tourism-tabs,
-  .tourism-content {
-    margin-left: 25px;
-
-    margin-right: 25px;
-  }
-
-  .tourism-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .tourism-card {
-    max-width: 400px;
-  }
-
-}
-
-
-@media (max-width: 600px) {
+@media (max-width: 700px) {
 
   .tourism-hero {
-    min-height: 470px;
+    min-height: 450px;
   }
 
   .tourism-hero-inner {
+    width: calc(100% - 30px);
+
     padding-top: 35px;
-
-    margin-left: 18px;
-
-    margin-right: 18px;
   }
 
   .tourism-hero h1 {
@@ -1576,14 +2159,16 @@ input {
 
   .tourism-description {
     font-size: 12px;
+
+    line-height: 1.7;
   }
 
   .tourism-stats {
-    gap: 15px;
+    flex-wrap: wrap;
   }
 
   .stat-box {
-    width: 95px;
+    width: 90px;
   }
 
   .tourism-search {
@@ -1591,31 +2176,357 @@ input {
   }
 
   .tourism-tabs {
-    margin-left: 10px;
+    width: 100%;
 
-    margin-right: 10px;
+    padding: 0 10px;
+
+    overflow-x: auto;
   }
 
   .tourism-tab {
+    flex-shrink: 0;
+
     padding: 0 10px;
   }
 
   .tourism-content {
-    margin-left: 15px;
+    width: calc(100% - 30px);
 
-    margin-right: 15px;
+    padding-top: 25px;
+  }
+
+  .tourism-grid {
+    grid-template-columns: 1fr;
+
+    gap: 20px;
   }
 
   .tourism-section-heading h2 {
     font-size: 18px;
   }
 
-  .tourism-grid {
-    grid-template-columns: 1fr;
+}
+
+
+@media (max-width: 450px) {
+
+  .tourism-stats {
+    gap: 8px;
   }
 
-  .tourism-card {
-    max-width: 100%;
+  .stat-box {
+    width: 82px;
+
+    padding-left: 12px;
+  }
+
+  .stat-box strong {
+    font-size: 21px;
+  }
+
+  .stat-box span {
+    font-size: 9px;
+  }
+
+  .tourism-card-image {
+    height: 220px;
+  }
+
+}
+
+/* ========================================
+   FOOTER
+======================================== */
+
+.footer {
+  width: 100%;
+
+  background: #0d1d35;
+
+  color: white;
+
+  margin-top: 0;
+}
+
+/* ========================================
+   FOOTER MAIN
+======================================== */
+
+.footer-container {
+  width: 1170px;
+  max-width: calc(100% - 40px);
+
+  min-height: 252px;
+
+  margin: 0 auto;
+
+  padding-top: 48px;
+  padding-bottom: 38px;
+
+  display: grid;
+
+  grid-template-columns:
+    2fr 1fr 1fr 1fr;
+
+  column-gap: 50px;
+}
+
+
+/* ========================================
+   ABOUT
+======================================== */
+
+.footer-about {
+  padding-right: 30px;
+}
+
+
+.footer-title {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  margin-bottom: 17px;
+}
+
+
+.footer-logo {
+  width: 38px;
+  height: 38px;
+
+  background: #1b3d73;
+
+  border: 1px solid #3c5d91;
+
+  border-radius: 5px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  color: white;
+
+  font-size: 12px;
+
+  font-weight: 700;
+}
+
+
+.footer-title h3 {
+  margin: 0;
+
+  font-size: 15px;
+
+  color: white;
+}
+
+
+.footer-about > p {
+  width: 270px;
+
+  color: #aeb8c7;
+
+  font-size: 11px;
+
+  line-height: 1.8;
+
+  margin-bottom: 15px;
+}
+
+
+.footer-location {
+  display: flex;
+
+  align-items: center;
+
+  gap: 9px;
+
+  color: #aeb8c7;
+
+  font-size: 11px;
+}
+
+
+.footer-location span {
+  color: #b8c1ce;
+
+  font-size: 9px;
+}
+
+
+/* ========================================
+   FOOTER COLUMNS
+======================================== */
+
+.footer-column {
+  display: flex;
+
+  flex-direction: column;
+}
+
+
+.footer-column h4 {
+  margin: 3px 0 9px;
+
+  color: #9faabc;
+
+  font-size: 11px;
+
+  font-weight: 500;
+}
+
+
+.footer-line {
+  width: 100%;
+
+  height: 1px;
+
+  background: rgba(255,255,255,0.12);
+
+  margin-bottom: 11px;
+}
+
+
+.footer-column a {
+  text-decoration: none;
+
+  color: #aeb8c7;
+
+  font-size: 12px;
+
+  margin-bottom: 12px;
+
+  transition: color 0.2s ease;
+}
+
+
+.footer-column a:hover {
+  color: white;
+}
+
+
+/* ========================================
+   FOOTER BOTTOM
+======================================== */
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.12);
+}
+
+
+.footer-bottom-container {
+  width: 1170px;
+  max-width: calc(100% - 40px);
+
+  height: 45px;
+
+  margin: 0 auto;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+
+.footer-bottom p {
+  margin: 0;
+
+  color: #708097;
+
+  font-size: 11px;
+}
+
+@media (max-width: 900px) {
+
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+
+    row-gap: 35px;
+  }
+
+  .footer-about {
+    padding-right: 0;
+  }
+
+}
+
+
+@media (max-width: 600px) {
+
+  .nav-container,
+  .top-container {
+    max-width: calc(100% - 24px);
+  }
+
+
+  .brand {
+    width: auto;
+  }
+
+
+  .brand-text h1 {
+    font-size: 17px;
+  }
+
+
+  .brand-text p {
+    font-size: 10px;
+  }
+
+
+  .navigation {
+    margin-left: auto;
+  }
+
+
+  .nav-link {
+    padding: 0 8px;
+
+    font-size: 12px;
+  }
+
+
+  .login-btn {
+    width: 65px;
+
+    font-size: 11px;
+  }
+
+
+  .footer-container {
+    grid-template-columns: 1fr;
+
+    row-gap: 28px;
+
+    padding-top: 35px;
+  }
+
+
+  .footer-about > p {
+    width: 100%;
+  }
+
+
+  .footer-bottom-container {
+    height: auto;
+
+    min-height: 70px;
+
+    padding: 12px 0;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    text-align: center;
   }
 
 }

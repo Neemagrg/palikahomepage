@@ -2,6 +2,7 @@ import TopBar from "../components/TopBar";
 import Navbar from "../components/Navbar";
 import Hero from "../components/Hero";
 import DestinationCard from "../components/DestinationCard";
+import Footer from "../components/Footer";
 
 function Home() {
 
@@ -76,6 +77,8 @@ function Home() {
         </section>
 
       </main>
+
+      <Footer />
 
     </div>
   );

@@ -10,7 +10,6 @@ import Tourism from "./pages/Tourism";
 function App() {
 
   return (
-
     <BrowserRouter>
 
       <Routes>
@@ -28,7 +27,6 @@ function App() {
       </Routes>
 
     </BrowserRouter>
-
   );
 }
 

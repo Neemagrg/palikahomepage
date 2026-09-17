@@ -1,7 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 
 function Navbar() {
-
   const location = useLocation();
 
   return (
@@ -9,33 +8,26 @@ function Navbar() {
 
       <div className="nav-container">
 
-        {/* Logo */}
-
+        {/* Logo and Website Name */}
         <Link to="/" className="brand">
 
-          <img
-            src="/images/logo.png"
-            alt="बेलबारी नगरपालिका"
-            className="logo"
-          />
+          <div className="logo-container">
+            <img
+              src="/images/logo.png"
+              alt="बेलबारी नगरपालिका"
+              className="logo"
+            />
+          </div>
 
           <div className="brand-text">
-
-            <h1>
-              बेलबारी नगरपालिका
-            </h1>
-
-            <p>
-              पर्यटकीय क्षेत्र
-            </p>
-
+            <h1>बेलबारी नगरपालिका</h1>
+            <p>पर्यटकीय क्षेत्र</p>
           </div>
 
         </Link>
 
 
         {/* Navigation */}
-
         <div className="navigation">
 
           <Link
@@ -49,7 +41,6 @@ function Navbar() {
             गृहपृष्ठ
           </Link>
 
-
           <Link
             to="/tourism"
             className={
@@ -61,23 +52,10 @@ function Navbar() {
             पर्यटकीय क्षेत्र
           </Link>
 
-
-          <Link
-            to="/historical"
-            className={
-              location.pathname === "/historical"
-                ? "nav-link active"
-                : "nav-link"
-            }
-          >
-            ऐतिहासिक
-          </Link>
-
         </div>
 
 
         {/* Login */}
-
         <button className="login-btn">
           लग इन
         </button>
